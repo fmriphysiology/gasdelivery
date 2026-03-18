@@ -1,1 +1,5 @@
-Readme
+# MATLAB analysis scripts from "A Low-Cost, Microcontroller-Based Gas Delivery System for Respiratory Stimuli in MRI Studies"
+
+Respiratory data were analysed in MATLAB (The Mathworks, Natick, MA). End-tidal timepoints were identified from the peaks of the CO2 trace for the hyperoxia stimulus and the troughs of the O2 trace for the hypercapnia stimulus. This is particularly useful during transitions in the stimuli as the inspired CO2 level can exceed the expired CO2 level during CO2 increases and likewise the inspired O2 level can be lower than the expired O2 level during O2 decreases. The identified PETO2 and PETCO2 values were then interpolated onto a 5 s temporal resolution to enable averaging across participants. Average values for the baseline and change in PETCO2 and PETO2 were calculated using time windows. For the hypercapnia stimulus the windows for the baseline were 20 to 30 s, 140 to 150 s and 260 to 270 s and for the peak were 80 to 90 s, 200 to 210 s and 320 to 330 s. Whilst for the hyperoxia stimulus the window for the baseline was 0 to 55 s and the windows for the peak were 195 to 225 s and 435 to 465 s.
+
+Expired gases data are available at, doi: https://doi.org/10.5281/zenodo.19097161. 
