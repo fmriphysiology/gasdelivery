@@ -1,13 +1,13 @@
-function [et_resamp fi_resamp]=process_hyperoxiadata(subj,fname_start_times)
+function [et_resamp fi_resamp]=process_hyperoxiadata(subj,fname_start_times,src)
 
     sample_freq=1000; %Hz
     t_1stblock=120; %seconds
     t_total=600; %seconds
 
-    fname=[char(subj) '-hyperoxia.txt'];
+    fname=[src char(subj) '-hyperoxia.txt'];
     data=load(fname);
 
-    start_times=readtable(fname_start_times,'FileType','delimitedtext'); %start times are start of first hyperoxia block
+    start_times=readtable([src fname_start_times],'FileType','delimitedtext'); %start times are start of first hyperoxia block
     t_start=start_times.start_time(find(strcmp(start_times.subject_id,subj)))-120*sample_freq;
     t_end=t_start+t_total*sample_freq;
     if t_end>length(data)
